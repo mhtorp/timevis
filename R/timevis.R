@@ -419,20 +419,6 @@ timevis <- function(data, groups, showZoom = TRUE, zoomFactor = 0.5, fit = TRUE,
   if (!is.null(options[["start"]]) || !is.null(options[["end"]])) {
     fit <- FALSE
   }
-  
-  if (!is.null(options$locale)) {
-    deps <- c(
-      deps,
-      list(
-        htmltools::htmlDependency(
-          name = "moment",
-          version = "2.29.3",
-          src = system.file("htmlwidgets/lib/moment-2.29.3", package = "timevis"),
-          script = "moment-with-locales.min.js"
-        )
-      )
-    )
-  }
 
   # forward options using x
   x = list(
